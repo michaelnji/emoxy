@@ -10,10 +10,11 @@ export type EmoxyEmojiCategory =
 	| "flags";
 
 export type EmoxyEmoji = {
-		name: string,
-		category: string,
-		group: string,
-		htmlCode: string[]
-		unicode: string[]
-	};
+	name: string;
+	category: string;
+	group: string;
+	htmlCode: string[];
+	unicode: string[];
+};
 
+export class HTTPError extends Error {}
