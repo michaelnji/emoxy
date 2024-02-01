@@ -1,4 +1,4 @@
-import axios from "axios";
+import ky from "ky";
 import { EmoxyEmoji } from "../types";
 
 /**
@@ -11,18 +11,33 @@ export class Emoxy {
 	private BASE_URL = "https://emojihub.yurace.pro/api";
 
 	/**
-	 * @description Gets all emojis from the API
-	 * @return {*}  {(Promise<EmoxyEmoji[] | null>)}
+	 * @description gets all emojis
+	 * @return {*}  {(Promise<{
+	 * 		code: number;
+	 * 		message: string;
+	 * 		emojis: EmoxyEmoji[] | unknown;
+	 * 	}>)}
 	 * @memberof Emoxy
 	 */
-	async allEmojis(): Promise<EmoxyEmoji[] | null> {
+	async allEmojis(): Promise<{
+		code: number;
+		message: string;
+		emojis: EmoxyEmoji[] | unknown;
+	}> {
 		const url = `${this.BASE_URL}/all`;
 		try {
-			const response = await axios.get(url);
-			const emojis = await response.data;
-			return emojis;
+			const response = await ky.get(url).json();
+			return {
+				code: 200,
+				message: "Success",
+				emojis: response,
+			};
 		} catch (error) {
-			return null;
+			return {
+				code: 500,
+				message: "Fetch Error: failed to fetch",
+				emojis: [],
+			};
 		}
 	}
 }
