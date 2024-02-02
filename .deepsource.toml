@@ -1,0 +1,15 @@
+version = 1
+
+test_patterns = ["test/**"]
+
+exclude_patterns = ["dist/**"]
+
+[[analyzers]]
+name = "javascript"
+
+  [analyzers.meta]
+  environment = [
+    "nodejs",
+    "browser",
+    "vitest"
+  ]
