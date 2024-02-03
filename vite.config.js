@@ -4,8 +4,18 @@ import banner from 'vite-plugin-banner';
 import { nodePolyfills } from 'vite-plugin-node-polyfills'
 import removeConsole from "vite-plugin-remove-console";
 import pkg from './package.json';
+
+/// <reference types="vitest" />
 /** @type {import('vite').UserConfig} */
 export default defineConfig({
+  test: {
+		reporters: ["html", "default"],
+     coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html'],
+       reportsDirectory: './tests-c/unit/coverage'
+    },
+	},
    plugins: [
      nodePolyfills(),
      removeConsole(),
