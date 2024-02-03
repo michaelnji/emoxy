@@ -22,11 +22,11 @@ export class Emoxy {
 		async all_emojis(): Promise<{
 			code: number;
 			message: string;
-			emojis: EmoxyEmoji[] | unknown;
+			emojis: EmoxyEmoji[];
 		}> {
 			const url = `${this.BASE_URL}/all`;
 			try {
-				const response = await ky.get(url).json();
+				const response: EmoxyEmoji[] = await ky.get(url).json();
 				return {
 					code: 200,
 					message: "Success",
