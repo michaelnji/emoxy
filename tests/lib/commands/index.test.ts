@@ -15,36 +15,29 @@ describe("Test suite for exposed functions", async () => {
 	});
 
 	const cat = getAllCategories();
-	for (let i = 0; i < cat.length; i++) {
-		const res = await getAllEmojisInCategory(cat[i]);
-		const res_single = await getRandomEmojiInCategory(cat[i]);
-		const currentGroup = getSpecificGroups(cat[i]);
+	for (const i of cat) {
+		const res = await getAllEmojisInCategory(i);
+		const res_single = await getRandomEmojiInCategory(i);
+		const currentGroup = getSpecificGroups(i);
 
-		test.concurrent(
-			`Returns a truthy response for ${cat[i]} category`,
-			async () => {
-				expect(res).toBeTruthy();
-			},
-		);
-		test.concurrent(`Returns emojis for ${cat[i]} category`, async () => {
+		test.concurrent(`Returns a truthy response for ${i} category`, () => {
+			expect(res).toBeTruthy();
+		});
+		test.concurrent(`Returns emojis for ${i} category`, () => {
 			expect(res?.emojis?.length).toBeGreaterThanOrEqual(1);
 		});
 
-		test.concurrent(
-			`Returns a random emoji for ${cat[i]} category`,
-			async () => {
-				expect(res_single?.emoji?.name).toBeDefined();
-			},
-		);
+		test.concurrent(`Returns a random emoji for ${i} category`, () => {
+			expect(res_single?.emoji?.name).toBeDefined();
+		});
 
-		for (let j = 0; j < currentGroup.length; j++) {
-			const group = currentGroup[j];
+		for (const group of currentGroup) {
 			const resGroup = await getAllEmojisInGroup(group);
 			const resGroupSingle = await getRandomEmojiInGroup(group);
-			test.concurrent(`Returns emojis for ${group} group`, async () => {
+			test.concurrent(`Returns emojis for ${group} group`, () => {
 				expect(resGroup?.emojis?.length).toBeGreaterThanOrEqual(1);
 			});
-			test.concurrent(`Returns random emoji from ${group} group`, async () => {
+			test.concurrent(`Returns random emoji from ${group} group`, () => {
 				expect(resGroupSingle?.emoji?.name).toBeDefined();
 			});
 		}
