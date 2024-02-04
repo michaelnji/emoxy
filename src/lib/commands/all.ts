@@ -1,13 +1,9 @@
 import { Emoxy } from "../initiator";
-import { EmoxyEmoji } from "../types";
+import { EmoxyResponseGroup } from "../types";
 
 const client = new Emoxy();
 
-export async function getAllEmojis(): Promise<{
-	code: number;
-	message: string;
-	emojis: EmoxyEmoji[];
-}> {
+export async function getAllEmojis(): Promise<EmoxyResponseGroup> {
 	const data = await client.all_emojis();
 	return data;
 }

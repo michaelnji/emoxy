@@ -18,3 +18,14 @@ export type EmoxyEmoji = {
 };
 
 export class HTTPError extends Error {}
+
+export type EmoxyResponseGroup = {
+	code: number;
+	message: string;
+	emojis: EmoxyEmoji[] | null;
+};
+export type EmoxyResponse = {
+	code: number;
+	message: string;
+	emoji: EmoxyEmoji | null;
+};

@@ -1,6 +1,9 @@
 import { EmoxyEmojiCategory } from "../types";
 
-export const data = [
+export const data: {
+	name: EmoxyEmojiCategory;
+	group: string[];
+}[] = [
 	{
 		name: "smileys-and-people",
 		group: [
@@ -70,13 +73,10 @@ export const data = [
 	},
 ];
 
-export function getAllCategories(): string[] {
+export function getAllCategories(): EmoxyEmojiCategory[] {
 	return data.map((x) => x.name);
 }
-export function getAllgroups(): string[][] | string {
-	return data.map((x) => x.group);
-}
 
-export function getSpecificGroups(category: EmoxyEmojiCategory | string) {
+export function getSpecificGroups(category: EmoxyEmojiCategory) {
 	return data.filter((x) => x.name === category).map((x) => x.group)[0];
 }
