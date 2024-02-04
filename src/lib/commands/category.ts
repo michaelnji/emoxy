@@ -1,40 +1,36 @@
 import { Emoxy } from "../initiator";
-import type { EmoxyEmoji, EmoxyEmojiCategory } from "../types";
+import type {
+	EmoxyEmojiCategory,
+	EmoxyResponse,
+	EmoxyResponseGroup,
+} from "../types";
 
 const client = new Emoxy();
 
 export async function getRandomEmojiInCategory(
 	category: EmoxyEmojiCategory = "smileys-and-people",
-): Promise<{ code: number; message: string; emoji: unknown } | null> {
+): Promise<EmoxyResponse | null> {
 	const data = await client.random_emoji_cat(category);
 	return data === null ? null : data;
 }
 
 export async function getAllEmojisInCategory(
 	category: EmoxyEmojiCategory = "smileys-and-people",
-): Promise<{
-	code: number;
-	message: string;
-	emojis: EmoxyEmoji[] | unknown;
-} | null> {
+): Promise<EmoxyResponseGroup | null> {
 	const data = await client.all_emoji_cat(category);
 	return data === null ? null : data;
 }
 
-export async function getRandomEmojiInGroup(group = "emotion"): Promise<{
-	code: number;
-	message: string;
-	emoji: EmoxyEmoji | unknown;
-} | null> {
+export async function getRandomEmojiInGroup(
+	group = "emotion",
+): Promise<EmoxyResponse | null> {
 	const data = await client.random_emoji_group(group);
 	return data === null ? null : data;
 }
 
-export async function getAllEmojisInGroup(group = "emotion"): Promise<{
-	code: number;
-	message: string;
-	emojis: EmoxyEmoji[] | unknown;
-} | null> {
+export async function getAllEmojisInGroup(
+	group = "emotion",
+): Promise<EmoxyResponseGroup | null> {
 	const data = await client.all_emoji_group(group);
 	return data === null ? null : data;
 }

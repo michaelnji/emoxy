@@ -5,14 +5,13 @@ import {
 	getRandomEmojiInCategory,
 	getRandomEmojiInGroup,
 } from "./commands/category";
-import { getAllCategories, getAllgroups, getSpecificGroups } from "./utils";
+import { getAllCategories, getSpecificGroups } from "./utils";
 
 export {
 	getAllCategories,
 	getAllEmojis,
 	getAllEmojisInCategory,
 	getAllEmojisInGroup,
-	getAllgroups,
 	getRandomEmojiInCategory,
 	getRandomEmojiInGroup,
 	getSpecificGroups,
