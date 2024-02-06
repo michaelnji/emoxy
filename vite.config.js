@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 import banner from "vite-plugin-banner";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
 import removeConsole from "vite-plugin-remove-console";
-
+import dts from 'vite-plugin-dts';
 import pkg from "./package.json";
 
 /// <reference types="vitest" />
@@ -18,6 +18,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    dts(),
     nodePolyfills(),
     removeConsole(),
     banner(

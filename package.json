@@ -4,9 +4,11 @@
   "version": "0.0.1",
   "author": "COD3VIL",
   "homepage": "https://mykenji.vercel.app/projects/emoxy",
+  "repository": "https://github.com/michaelnji/emoxy",
   "files": [
     "dist"
   ],
+   "types": "./dist/index.d.ts",
   "main": "./dist/emoxy.umd.cjs",
   "module": "./dist/emoxy.js",
   "exports": {
@@ -20,7 +22,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "vitest --ui --typecheck --coverage.enabled=true",
-    "coverage": "vitest run --ui --coverage"
+    "coverage": "vitest run --coverage &&  vite preview --outDir html"
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
@@ -30,6 +32,7 @@
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vite-plugin-banner": "^0.7.1",
+    "vite-plugin-dts": "^3.7.2",
     "vite-plugin-remove-console": "^2.2.0",
     "vitest": "^1.2.2"
   },
@@ -38,5 +41,10 @@
     "axios": "^1.6.7",
     "ky": "^1.2.0",
     "vite-plugin-node-polyfills": "^0.19.0"
+  },
+  "keywords": ["emojihub", "emoji", "emoxy"],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michaelnji/emoxy/issues"
   }
 }
