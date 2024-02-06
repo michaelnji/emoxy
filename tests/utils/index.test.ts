@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { data, getSpecificGroups } from "../../src/lib/utils";
+import { data, getSpecificGroups } from "../../src/utils";
 
 // test data (categories & groups)
 test("Group returned matches data stored", () => {

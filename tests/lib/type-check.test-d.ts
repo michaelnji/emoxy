@@ -1,7 +1,7 @@
 import { describe, expectTypeOf, test } from "vitest";
-import { Emoxy } from "../../src/lib/initiator";
-import { EmoxyResponse, EmoxyResponseGroup } from "../../src/lib/types";
-import { data } from "../../src/lib/utils";
+import { Emoxy } from "../../src/initiator";
+import { data } from "../../src/utils";
+import { EmoxyResponse, EmoxyResponseGroup } from "../../src/types";
 
 const client = new Emoxy();
 

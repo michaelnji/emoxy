@@ -7,7 +7,7 @@ import {
 	getRandomEmojiInCategory,
 	getRandomEmojiInGroup,
 	getSpecificGroups,
-} from "../../../src/lib/main";
+} from "../../../src";
 
 describe("Test suite for exposed functions", async () => {
 	test("returns all emojis", async () => {

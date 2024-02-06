@@ -18,7 +18,7 @@ export default defineConfig({
     },
   },
   plugins: [
-    dts(),
+    dts({ rollupTypes: true }),
     nodePolyfills(),
     removeConsole(),
     banner(
@@ -27,7 +27,7 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, "src/lib/main.ts"),
+      entry: resolve(__dirname, "src/index.ts"),
       name: "Emoxy",
       fileName: "emoxy",
     },
