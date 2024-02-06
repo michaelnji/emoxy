@@ -1,4 +1,4 @@
-import { expectTypeOf } from "vitest";
+import { expectTypeOf, test } from "vitest";
 import { getSpecificGroups } from "../../src/lib/main";
 
 test("Types work properly", () => {

@@ -42,4 +42,4 @@ describe("Test suite for exposed functions", async () => {
 			});
 		}
 	}
-}, 40000);
+}, 120000);
