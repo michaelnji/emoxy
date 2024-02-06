@@ -1,14 +1,14 @@
 {
   "name": "emoxy",
   "description": "A wrapper for emojihub api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "COD3VIL",
   "homepage": "https://mykenji.vercel.app/projects/emoxy",
   "repository": "https://github.com/michaelnji/emoxy",
   "files": [
     "dist"
   ],
-   "types": "./dist/index.d.ts",
+  "types": "./dist/index.d.ts",
   "main": "./dist/emoxy.umd.js",
   "module": "./dist/emoxy.mjs",
   "exports": {
@@ -38,9 +38,12 @@
     "vite-plugin-node-polyfills": "^0.19.0",
     "@types/jest": "^29.5.12"
   },
-  "dependencies": {
-  },
-  "keywords": ["emojihub", "emoji", "emoxy"],
+  "dependencies": {},
+  "keywords": [
+    "emojihub",
+    "emoji",
+    "emoxy"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/michaelnji/emoxy/issues"
