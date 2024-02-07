@@ -1,7 +1,7 @@
 {
   "name": "emoxy",
   "description": "A wrapper for emojihub api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "COD3VIL",
   "homepage": "https://mykenji.vercel.app/projects/emoxy",
   "repository": {
