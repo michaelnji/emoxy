@@ -4,7 +4,10 @@
   "version": "1.0.3",
   "author": "COD3VIL",
   "homepage": "https://mykenji.vercel.app/projects/emoxy",
-  "repository": "https://github.com/michaelnji/emoxy",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelnji/emoxy.git"
+  },
   "files": [
     "dist"
   ],
